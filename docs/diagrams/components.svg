@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 970" role="img" aria-labelledby="title description">
+  <title id="title">ShootProcs architecture components</title>
+  <desc id="description">The WPF App depends on Core diagnosis and Windows adapters. Windows adapters depend on Core models and Windows APIs. Validation projects check Core and Windows behavior using disposable processes.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#495057"/>
+    </marker>
+  </defs>
+  <rect width="1240" height="970" fill="#ffffff"/>
+  <g stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="350" y="100" width="520" height="200" rx="18" fill="#a5d8ff" stroke="#1864ab"/>
+    <rect x="60" y="400" width="450" height="220" rx="18" fill="#b2f2bb" stroke="#2f9e44"/>
+    <rect x="730" y="400" width="450" height="220" rx="18" fill="#fff3bf" stroke="#e67700"/>
+    <rect x="60" y="740" width="450" height="180" rx="18" fill="#dee2e6" stroke="#495057"/>
+    <rect x="730" y="740" width="450" height="180" rx="18" fill="#dee2e6" stroke="#495057"/>
+    <g fill="none" stroke="#495057" marker-end="url(#arrow)">
+      <path d="M450 310 L280 390"/>
+      <path d="M770 310 L955 390"/>
+      <path d="M720 510 L520 510"/>
+      <path d="M955 630 L955 730"/>
+      <path d="M285 730 L285 630" stroke-dasharray="7 6"/>
+      <path d="M520 810 L680 700 L780 630" stroke-dasharray="7 6"/>
+    </g>
+  </g>
+  <g fill="#000000" font-family="Segoe UI, sans-serif">
+    <text x="60" y="60" font-size="30" font-weight="600">ShootProcs / architecture components</text>
+    <g text-anchor="middle" font-size="22">
+      <text x="610" y="170" font-weight="600">ShootProcs.App (WPF)</text>
+      <text x="610" y="210">Arena + Process Explorer</text>
+      <text x="610" y="250">Shared shell, inspector and Safe Mode</text>
+      <text x="285" y="475" font-weight="600">ShootProcs.Core</text>
+      <text x="285" y="515">Grouping + pressure scoring</text>
+      <text x="285" y="555">Captured termination orchestration</text>
+      <text x="955" y="475" font-weight="600">ShootProcs.Windows</text>
+      <text x="955" y="515">Identity + CPU/private memory</text>
+      <text x="955" y="555">Opt-in ETW + handle termination</text>
+    </g>
+    <g text-anchor="middle" font-size="20">
+      <text x="285" y="800" font-weight="600">Behavior + Windows validation</text>
+      <text x="285" y="840">Disposable test processes only</text>
+      <text x="285" y="880">Native UI + installer acceptance</text>
+      <text x="955" y="800" font-weight="600">Windows APIs</text>
+      <text x="955" y="840">Process/memory/time queries</text>
+      <text x="955" y="880">Kernel ETW + verified termination</text>
+    </g>
+    <g font-size="16">
+      <text x="70" y="345">Analyze + bounded requests</text>
+      <text x="925" y="335">Monitor samples</text>
+      <text x="925" y="365">Execute permitted shots</text>
+      <text x="620" y="480" text-anchor="middle">Models / interfaces</text>
+      <text x="975" y="675">Queries + native handles</text>
+      <text x="975" y="705">Admin only for kernel ETW</text>
+      <text x="310" y="680">Core behavior</text>
+    </g>
+  </g>
+</svg>

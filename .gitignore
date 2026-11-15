@@ -1,0 +1,15 @@
+.tools/
+**/bin/
+**/obj/
+artifacts/
+.vs/
+*.user
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+*.snk
+*.nettrace
+*.dmp
