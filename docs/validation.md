@@ -113,10 +113,19 @@ Generated evidence:
 - `artifacts\ui\explorer.png`
 - `artifacts\ui\confirmation.png`
 - `artifacts\ui\destruction.png`
+- `artifacts\ui\readme-arena.png` (fixture-only public preview)
 
 These are automated native-control, event-route, rendering, and execution
 checks. They are not a claim of exhaustive manual mouse, screen-reader,
 multi-monitor, or every-DPI acceptance.
+
+The README preview is captured by the same native application after an identity
+guard verifies all visible Arena targets belong to its disposable workers.
+The pending shot keeps membership and inspection stable while the confirmation
+overlay is temporarily hidden for capture, then restored. This is a screenshot
+of the actual running UI, not a drawn mockup; the fixture-only image is the
+only local UI capture intended for publication. Other diagnostic screenshots
+and reports remain private and ignored.
 
 The corrected self-contained executable was also exercised elevated, with
 36 passing boolean assertions including real rendered disk and network values.
