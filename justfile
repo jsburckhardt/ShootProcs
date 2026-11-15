@@ -5,8 +5,8 @@ default:
     @just --list
 
 # Launch the portable build without administrator privileges.
-run:
-    $exe = '.\artifacts\ShootProcs\ShootProcs.exe'; if (-not (Test-Path -LiteralPath $exe)) { throw 'No portable build found. Run just build first.' }; Start-Process -FilePath $exe
+run directory='artifacts\ShootProcs':
+    $exe = Join-Path '{{directory}}' 'ShootProcs.exe'; if (-not (Test-Path -LiteralPath $exe)) { throw 'No portable build found. Run just build first, or select the folder passed to -PublishDirectory.' }; Start-Process -FilePath $exe
 
 # Build and run from source, using the private SDK when available.
 dev:

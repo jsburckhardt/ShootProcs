@@ -10,6 +10,12 @@ A native Windows 11 application that turns live application diagnostics into
 an animated, interactive Arena, with a structured Process Explorer alongside it.
 Built with .NET 10 and WPF. No browser, web server, or WebView UI.
 
+![ShootProcs Arena with the GitHub repository button in the lower-left sidebar](docs/images/arena.png)
+
+*ShootProcs running elevated with live disk/network metrics and grouped
+application targets. Screenshot supplied for publication by the project owner.
+The GitHub logo in the lower-left sidebar opens this repository in your browser.*
+
 ## Install: download, run, done
 
 **Windows 11 x64. No administrator account, SDK, or separate .NET installation
@@ -104,6 +110,7 @@ From the project directory:
 
 ```powershell
 just run             # launch the existing portable build
+just run 'artifacts\release-candidate' # launch a separately published build
 just dev             # build and run from source
 just build           # build, tests, formatting, portable app and ZIP
 just test            # build, behavior tests and formatting
@@ -117,6 +124,12 @@ just                 # list commands
 rebuilding or packaging so Windows can replace its executable. Normal launch
 does not request admin; use **Enable tracing** inside the app for disk/network
 metrics.
+
+`just run` opens an existing binary; it does not rebuild source or update a
+window already running. If you still see the old "Native Windows" sidebar label,
+close that window and install the current release, use `just dev`, or launch
+the folder from your latest `-PublishDirectory` build. Current builds show a
+GitHub logo there instead.
 
 If needed, install the optional command runner with
 `winget install --id Casey.Just --exact --source winget`.
@@ -188,8 +201,9 @@ weekly. Dependency review checks PRs; Dependabot maintains NuGet dependencies
 and pinned GitHub Actions. CI builds Windows binaries and exercises application
 behavior and installer lifecycle. Version tags build release assets from a clean
 checkout, check their hashes, then publish the installer, ZIP, and checksum file.
-No local screenshots, process inventories, traces, SDKs, or credentials are
-published.
+The README screenshot was explicitly supplied for publication. Local diagnostic
+screenshots and process inventories are not automatically published; traces,
+SDKs, and credentials remain excluded.
 
 There is no automatic updater yet. Because releases include .NET, runtime
 security updates require a new ShootProcs release. Windows Authenticode signing,

@@ -585,6 +585,20 @@ public partial class MainWindow : Window
                 new(SafeToggle.ActualWidth / 2, SafeToggle.ActualHeight / 2), this);
             checks["confirmationBlocksUnderlyingControls"] = InputHitTest(backgroundPoint) == ConfirmationOverlay;
             Capture(Path.Combine(output, "confirmation.png"));
+            checks["readmeCaptureContainsOnlyOwnedFixture"] = Arena.Children.OfType<ArenaTarget>()
+                .SelectMany(t => t.Group.Processes).Select(p => p.Identity.Pid).ToHashSet()
+                .SetEquals(workers.Select(p => p.Id))
+                && InspectorName.Text == group.Name;
+            if (!(bool)checks["readmeCaptureContainsOnlyOwnedFixture"])
+                throw new InvalidOperationException("README capture refused unowned application details.");
+            try
+            {
+                ConfirmationOverlay.Visibility = Visibility.Collapsed;
+                UpdateLayout();
+                await Dispatcher.InvokeAsync(() => { }, DispatcherPriority.ContextIdle);
+                Capture(Path.Combine(output, "readme-arena.png"));
+            }
+            finally { ConfirmationOverlay.Visibility = Visibility.Visible; }
             CancelShotButton.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             checks["cancelKeepsApplicationAlive"] = _pending == null && !Arena.Frozen && !first.HasExited && !second.HasExited;
             RequestShot(group);
