@@ -36,8 +36,9 @@ the tag-release publisher.
 
 Release payloads are allowlisted and built in fresh staging directories.
 Source control and release uploads exclude local process inventories,
-personal screenshots, traces, SDKs, certificates/private keys, and environment
-files. The README image is a guarded fixture-only capture, reviewed before
-publication; it does not expose existing application names or paths.
+unapproved screenshots, traces, SDKs, certificates/private keys, and environment
+files. The README image was explicitly supplied for publication by the project
+owner and reviewed for sensitive details. That permission does not extend to
+other local screenshots or diagnostic reports.
 Automated scanning reduces risk; it is not a guarantee that software has no
 vulnerabilities.

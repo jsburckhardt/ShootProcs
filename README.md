@@ -12,9 +12,9 @@ Built with .NET 10 and WPF. No browser, web server, or WebView UI.
 
 ![ShootProcs Arena with the GitHub repository button in the lower-left sidebar](docs/images/arena.png)
 
-*Captured from the running Windows application using an owned disposable test
-app, so no private application names or paths appear. The GitHub logo in the
-lower-left sidebar opens this repository in your browser.*
+*ShootProcs running elevated with live disk/network metrics and grouped
+application targets. Screenshot supplied for publication by the project owner.
+The GitHub logo in the lower-left sidebar opens this repository in your browser.*
 
 ## Install: download, run, done
 
@@ -201,8 +201,9 @@ weekly. Dependency review checks PRs; Dependabot maintains NuGet dependencies
 and pinned GitHub Actions. CI builds Windows binaries and exercises application
 behavior and installer lifecycle. Version tags build release assets from a clean
 checkout, check their hashes, then publish the installer, ZIP, and checksum file.
-The guarded fixture-only README preview is public. Personal screenshots,
-process inventories, traces, SDKs, and credentials are not published.
+The README screenshot was explicitly supplied for publication. Local diagnostic
+screenshots and process inventories are not automatically published; traces,
+SDKs, and credentials remain excluded.
 
 There is no automatic updater yet. Because releases include .NET, runtime
 security updates require a new ShootProcs release. Windows Authenticode signing,
