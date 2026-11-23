@@ -37,6 +37,11 @@ jobs:
       - name: Build, verify native behavior, and package
         shell: pwsh
         run: .\build.ps1 -Verify -Installer -Version $env:RELEASE_VERSION
+      - name: Verify elevated disk and network tracing
+        shell: pwsh
+        run: |
+          & .\tools\ShootProcs.Validation\bin\Release\net10.0-windows\ShootProcs.Validation.exe --verify-telemetry artifacts\validation
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Install, launch, and uninstall
         shell: pwsh
         run: .\tools\Test-Installer.ps1
