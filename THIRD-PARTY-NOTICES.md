@@ -8,7 +8,7 @@ dependency and is not redistributed.
 The application dependency graph additionally includes these MIT-licensed
 NuGet packages, as verified from their package metadata:
 
-- Microsoft.Diagnostics.Tracing.TraceEvent 4.0.0
+- Microsoft.Diagnostics.Tracing.TraceEvent 4.0.2
 - Microsoft.Diagnostics.NETCore.Client 0.2.661903
 - Microsoft.Extensions.DependencyInjection.Abstractions 8.0.2
 - Microsoft.Extensions.Logging.Abstractions 8.0.3
